@@ -1,52 +1,11 @@
-# import telebot
-
-# bot = telebot.TeleBot("808156274:AAELdNTLy-cyahfkSbtht48lxm6kPJFZPG0")
-
-
-# @bot.message_handler(commands=['help'])
-# def send_welcome(message):
-# 	bot.reply_to(message, "Хэй, как твои дела?")
-
-# @bot.message_handler(func=lambda m: True)
-# def echo_all(message):
-# 	bot.reply_to(message, message.text)
-
-# bot.polling()
-
-# import telebot
-
-# bot = telebot.TeleBot('808156274:AAELdNTLy-cyahfkSbtht48lxm6kPJFZPG0')
-# keyboard1 = telebot.types.ReplyKeyboardMarkup()
-# keyboard1.row('Привет', 'Пока')
-
-# @bot.message_handler(commands=['start'])
-# def start_message(message):
-#     bot.send_message(message.chat.id, 'Привет, ты написал мне /start', reply_markup=keyboard1)
-
-# @bot.message_handler(content_types=['text'])
-# def send_text(message):
-#     if message.text.lower() == 'привет':
-#         bot.send_message(message.chat.id, 'Привет')
-#     elif message.text.lower() == 'пока':
-#         bot.send_message(message.chat.id, 'Прощай')
-#     elif message.text.lower() == 'я тебя люблю':
-#         bot.send_sticker(message.chat.id, 'CAADAgADZgkAAnlc4gmfCor5YbYYRAI')
-
-# @bot.message_handler(content_types=['sticker'])
-# def sticker_id(message):
-#     print(message)
-
-
-# bot.polling()
 
 import telebot
 import random
 import pyowm
 
 
-
-greetings = ["Привет", "Дратути", "Здравствуй",]
-how_are_you = ["Отлично", "Ужасно", "Хорошо","Супер Гуд ! Я выйграл в лотерее"]
+greetings = ["Привет", "Здравствуй"]
+how_are_you = ["Отлично"]
 
 token ="808156274:AAELdNTLy-cyahfkSbtht48lxm6kPJFZPG0"
 
@@ -73,13 +32,7 @@ def weath(message):
     hum = w.get_humidity()
     desc = w.get_detailed_status()
     bot.send_message(message.chat.id, "Сейчас в городе " + str(city) + " " + str(desc) + ", температура - " + str(temperature) + "°C, влажность - " + str(hum) + "%, скорость ветра - " +str(wind) + "м/с.")
-     
-    
-    
-    
-    
-    
-    
+
     
 @bot.message_handler(commands=["start"])
 def start(message):

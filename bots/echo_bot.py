@@ -3,7 +3,6 @@ import telebot
 import random
 import pyowm
 
-
 greetings = ["Привет", "Здравствуй"]
 how_are_you = ["Отлично"]
 
